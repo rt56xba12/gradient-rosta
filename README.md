@@ -2,114 +2,11 @@
 
 # 📈 Retail Turnover Forecasting
 
-Machine Learning solutions for forecasting monthly retail turnover (RTO) of **Pyaterochka** stores.
+Проект по прогнозированию месячного розничного товарооборота (РТО) магазинов сети «Пятёрочка».
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
-
-English | [Русский](#-русский)
-
-</div>
-
----
-
-# 🇬🇧 English
-
-## Overview
-
-This repository contains two independent machine learning solutions developed for the **X5 Group "Gradient of Growth" Hackathon**.
-
-The objective is to forecast the monthly **Retail Turnover (RTO)** of Pyaterochka stores one month ahead using historical sales, store characteristics, customer behavior, and local infrastructure.
-
----
-
-## Pipeline
-
-```text
-Raw data
-    │
-    ▼
-Data validation
-    │
-    ▼
-Exploratory Data Analysis
-    │
-    ▼
-Feature Engineering
-    │
-    ▼
-Time-based validation
-    │
-    ▼
-Model training
-    │
-    ▼
-Post-processing
-    │
-    ▼
-Submission
-```
-
----
-
-## Repository Structure
-
-```text
-Retail-Turnover-Forecasting/
-│
-├── stage1_train/
-│   ├── random_forest.ipynb
-│   ├── README.md
-│   └── requirements.txt
-│
-├── stage2_train2/
-│   ├── solution.ipynb
-│   ├── README.md
-│   ├── requirements.txt
-│   └── analysis/
-│       ├── target_distribution.png
-│       ├── seasonality_by_month.png
-│       ├── spearman_correlation_matrix.png
-│       ├── full_correlation_matrix.png
-│       └── yoy_growth_janfeb.png
-│
-├── LICENSE
-├── README.md
-└── .gitignore
-```
-
----
-
-## Results
-
-| Stage | Model | Holdout / Final Result |
-|------|------|------------------------:|
-| Stage 1 | Random Forest | **MAPE = 2.78%** |
-| Stage 2 | CatBoost + Feature Engineering + Adaptive Clipping | **MAPE ≈ 7.67% (82.69 points)** |
-
----
-
-## Technologies
-
-- Python
-- Pandas
-- NumPy
-- CatBoost
-- Scikit-learn
-- Matplotlib
-- Seaborn
-- Jupyter Notebook
-
----
-
-## Reproducibility
-
-Each stage contains its own notebook, documentation, and dependency list, allowing every experiment to be reproduced independently.
-
----
-
-# 🇷🇺 Русский
 
 ## О проекте
 
@@ -121,29 +18,24 @@ Each stage contains its own notebook, documentation, and dependency list, allowi
 
 ## Пайплайн
 
-```text
-Исходные данные
-      │
-      ▼
-Проверка качества данных
-      │
-      ▼
-Разведочный анализ (EDA)
-      │
-      ▼
-Feature Engineering
-      │
-      ▼
-Time-based валидация
-      │
-      ▼
-Обучение модели
-      │
-      ▼
-Постобработка прогнозов
-      │
-      ▼
-Формирование решения
+```mermaid
+flowchart TD
+    A[Исходные данные]
+    B[Проверка качества данных]
+    C[EDA]
+    D[Feature Engineering]
+    E[Time-based validation]
+    F[Обучение модели]
+    G[Постобработка прогноза]
+    H[Submission]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
 ```
 
 ---
@@ -151,10 +43,29 @@ Time-based валидация
 ## Структура репозитория
 
 ```text
-Retail-Turnover-Forecasting/
+gradient-rosta/
 │
 ├── stage1_train/
+│   ├── random_forest.ipynb
+│   ├── train.csv
+│   └── README.md
+│   └── images/
+│       └── feature_importance.png
+│
 ├── stage2_train2/
+│   ├── solution.ipynb
+│   ├── train_2.csv
+│   ├── README.md
+│   └── images/
+│       ├── error_distribution.png
+│       ├── feature_importance.png
+│       ├── full_correlation_matrix.png
+│       ├── prediction_vs_true.png
+│       ├── seasonality_by_month.png
+│       ├── target_distribution.png
+│       └── yoy_growth_janfeb.png
+│
+├── requirements.txt
 ├── LICENSE
 ├── README.md
 └── .gitignore
@@ -169,9 +80,16 @@ Retail-Turnover-Forecasting/
 | Этап 1 | Random Forest | **MAPE = 2.78%** |
 | Этап 2 | CatBoost + Feature Engineering + Adaptive Clipping | **MAPE ≈ 7.67% (82.69 балла)** |
 
+## Выбор моделей
+
+В репозитории представлены два независимых решения.
+
+- **Stage 1** — Random Forest как сильный базовый ансамблевый метод для табличных данных.
+- **Stage 2** — CatBoost с расширенным feature engineering и адаптивной постобработкой прогноза, обеспечивший наилучшее качество.
+
 ---
 
-## Используемые технологии
+## Стек технологий
 
 - Python
 - Pandas
@@ -190,7 +108,6 @@ Retail-Turnover-Forecasting/
 
 - ноутбук;
 - README;
-- requirements.txt.
 
 Благодаря этому каждое решение можно воспроизвести независимо.
 
