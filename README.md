@@ -66,6 +66,9 @@ gradient-rosta/
 │       ├── seasonality_by_month.png
 │       ├── target_distribution.png
 │       └── yoy_growth_janfeb.png
+│ 
+├── certificates/
+│   └── gradient_rosta_certificate.pdf
 │
 ├── requirements.txt
 ├── LICENSE
@@ -112,6 +115,12 @@ gradient-rosta/
 - README с описанием решения.
 
 Общие зависимости проекта перечислены в корневом `requirements.txt`.
+
+---
+
+## Сертификат
+
+Сертификат участника хакатона **X5 Group «Градиент роста»** доступен в папке `certificates/`.
 
 ---
 
