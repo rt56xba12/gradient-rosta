@@ -8,6 +8,8 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+</div>
+
 ## О проекте
 
 В репозитории представлены два независимых решения задачи прогнозирования месячного **розничного товарооборота (РТО)** магазинов сети **«Пятёрочка»**, разработанные в рамках хакатона **X5 Group «Градиент роста»**.
@@ -48,7 +50,7 @@ gradient-rosta/
 ├── stage1_train/
 │   ├── random_forest.ipynb
 │   ├── train.csv
-│   └── README.md
+│   ├── README.md
 │   └── images/
 │       └── feature_importance.png
 │
@@ -106,10 +108,10 @@ gradient-rosta/
 
 Каждый этап содержит:
 
-- ноутбук;
-- README;
+- Jupyter Notebook с полным пайплайном;
+- README с описанием решения.
 
-Благодаря этому каждое решение можно воспроизвести независимо.
+Общие зависимости проекта перечислены в корневом `requirements.txt`.
 
 ---
 
